@@ -1,0 +1,83 @@
+@import '../../styles/colors';
+
+.login-screen {
+
+    display: flex;
+    justify-content: center;
+
+    .login-form {
+        width: 520px;
+        height: 300px;
+        background-color: $white;
+        margin-top: 50px;
+        border-style: solid;
+        border-radius: 1.7%;
+        border-color: $purple;
+    }
+
+    .title {
+        display: flex;
+        background-color: $lightPurple;
+        height: 60px;
+
+        span {
+            font-size: 18px;
+            font-weight: bold;
+            color: $white;
+            margin: 20px 0px 0px 25px;
+        }
+    }
+
+    .form-body {
+        margin: 15px 15px 15px 15px;
+        text-align: center;
+
+        div {
+            margin-top: 10px;
+        }
+
+        input {
+            height: 50px;
+            width: 420px;
+            margin-top: 5px;
+            background-color: #f0eef1;
+            border-width: 1px;
+            border-radius: 3px;
+            font-size: 17px;
+            padding-left: 15px;
+        }
+
+        .icon {
+            margin-left: -45px;
+            vertical-align: middle;
+            color: $lightGrey;
+        }
+
+        .footer {
+            display: flex;
+
+            .login-btn {
+                
+                button {
+                    width: 130px;
+                    height: 40px;
+                    margin-left: 36px;
+                    background-color: $lightPurple;
+                    border-radius: 5px;
+                    font-size: 17px;
+                    font-weight: bold;
+                    color: $white;
+                    border-style: none;
+                }
+            }
+            
+            .forgot-password {
+                vertical-align: middle;
+                margin: 20px 15px 15px 40px;
+                color: $lightGrey;
+                font-size: 15px;
+                font-weight: bold;
+            }
+        }
+    }
+}
