@@ -9,15 +9,13 @@
         width: 520px;
         height: 300px;
         background-color: $white;
-        margin-top: 50px;
-        border-style: solid;
-        border-radius: 1.7%;
-        border-color: $purple;
+        margin-top: 100px;
+        box-shadow: 0 0 5px 0px;
     }
 
     .title {
         display: flex;
-        background-color: $lightPurple;
+        background-image: linear-gradient($lightPurple 70%, $purple);
         height: 60px;
 
         span {
@@ -29,7 +27,7 @@
     }
 
     .form-body {
-        margin: 15px 15px 15px 15px;
+        margin: 15px 15px 15px 0px;
         text-align: center;
 
         div {
@@ -61,13 +59,17 @@
                 button {
                     width: 130px;
                     height: 40px;
-                    margin-left: 36px;
-                    background-color: $lightPurple;
+                    margin-left: 44px;
+                    background-image: linear-gradient($lightPurple 70%, $purple);
                     border-radius: 5px;
                     font-size: 17px;
                     font-weight: bold;
                     color: $white;
                     border-style: none;
+                }
+
+                button:hover, button:focus {
+                    background-image: linear-gradient($purple, $lightPurple);
                 }
             }
             
@@ -77,6 +79,7 @@
                 color: $lightGrey;
                 font-size: 15px;
                 font-weight: bold;
+                cursor: pointer;
             }
         }
     }
