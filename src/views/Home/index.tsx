@@ -67,7 +67,7 @@ class Home extends React.Component<{}, State> {
             let { orders } = this.state;
             orders = orders.filter(o => o.id !== id);
 
-            this.setState({ orders });
+            this.setState({ orders }, () => this._applyFilter());
         }
     }
 
