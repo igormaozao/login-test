@@ -23,7 +23,7 @@ class OrdersTable extends React.Component<Props, {}> {
 
     render() {
         const { ordersList } = this.props;
-        
+        const xWinSize = window.innerWidth;
         const content = ordersList.map((order, index) => {
             return (
             <tr key={index} className={`${index % 2 === 0 ? '' : 'colored'}`}>
@@ -34,7 +34,7 @@ class OrdersTable extends React.Component<Props, {}> {
                     <td>
                         <CancelButton
                             className="cancel-btn"
-                            btnText="Cancel Order"
+                            btnText={xWinSize > 500 ? "Cancel Order" : "X"}
                             callbackData={order.id}
                             onClickCallback={this._onCancelOrder}
                         />

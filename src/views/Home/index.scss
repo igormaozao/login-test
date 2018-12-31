@@ -150,3 +150,47 @@
         }
     }
 }
+
+@media screen and (min-width: 320px) and (max-width:500px) { 
+    .top-bar {
+        span {
+            font-size: 15px;
+        }
+
+        .logout-btn {
+            button {
+                width: 100px;
+                height: 30px;
+                font-size: 16px;
+                margin-top: 15px;
+            }
+        }
+    }
+
+    .home .order-form {
+        width: 330px;
+        margin-top: 30px;
+
+        .order-filter {
+            .filter {
+                margin-left: -10px;
+
+                input {
+                    width: 85%;
+                    font-size: 15px;
+                    padding-left: 10px
+                }
+            }
+        }
+
+        .form-body {
+            .order-list {
+                .cancel-btn {
+                    button {
+                        width: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
