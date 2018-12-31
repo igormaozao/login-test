@@ -13,7 +13,7 @@ class NavBar extends React.Component {
     render() {
         return (
             <div className="top-bar">
-                <span>Logged in as Admin</span>
+                <span>Logged in as {LocalStorage.getUsername()}</span>
                 <Button
                     className="logout-btn"
                     btnText="Logout"
