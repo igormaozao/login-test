@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Switch, Route } from 'react-router';
+import { Switch, Route, Redirect } from 'react-router';
 
 const Login = React.lazy(() => import('./../../views/Login'));
 const NotFound = React.lazy(() => import('./../../views/NotFound'));
@@ -13,6 +13,7 @@ class RouterSwitch extends React.Component {
         return (
             <React.Suspense fallback={null}>
                 <Switch>
+                    <Redirect from={'/'} exact={true} to={Constants.ROUTES.LOGIN} />
                     <Route path={Constants.ROUTES.LOGIN} exact={true} component={Login} />
                     <Route path={Constants.ROUTES.HOME} exact={true} component={Home} />
                     <Route path={Constants.ROUTES.FORGOT_PASSWORD} exact={true} component={ForgotPassword} />
