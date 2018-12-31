@@ -1,0 +1,152 @@
+@import "../../styles/colors";
+
+.top-bar {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    margin-right: 60px;
+    justify-content: flex-end;
+    background-image: linear-gradient($purple, $lightPurple);
+
+    span {
+        font-size: 20px;
+        font-weight: bold;
+        color: $white;
+        margin-right: 30px;
+        margin-top: 20px;
+    }
+    
+    .logout-btn {
+        button {
+            width: 125px;
+            height: 40px;
+            background-image: linear-gradient($lightPurple 70%, $purple);
+            border-radius: 5px;
+            font-size: 17px;
+            color: $white;
+            border-style: none;
+            margin-top: 10px;
+            margin-right: 15px;
+        }
+    
+        button:hover, button:focus {
+            background-image: linear-gradient($purple, $lightPurple);
+        }
+    }
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+
+    .order-form {
+        text-align: center;
+        background-color: $white;
+        width: 500px;
+        margin-top: 50px;
+        margin-bottom: 100px;
+        box-shadow: 0 0 5px 0px;
+
+        .order-title {
+            display: flex;
+            height: 60px;
+            background-image: linear-gradient($lightPurple 70%, $purple);
+
+            span {
+                text-align: left;
+                width: 90%;
+                font-size: 18px;
+                font-weight: bold;
+                color: $white;
+                margin: 20px 0px 0px 25px;
+            }
+
+            .icon {
+                height: 100%;
+                font-size: 35px;
+                color: $white;
+                margin-right: 10px;
+            }
+        }
+        
+        .order-filter {
+            .filter {
+                margin-left: -20px;
+
+                input {
+                    height: 30px;
+                    width: 90%;
+                    margin-top: 5px;
+                    background-color: $darkWhite;
+                    border-width: 1px;
+                    border-radius: 3px;
+                    font-size: 17px;
+                    padding-left: 15px;
+                }
+        
+                .icon {
+                    margin-left: -45px;
+                    vertical-align: middle;
+                    color: $lightGrey;
+                }
+            }
+        }
+
+        .form-body {
+            text-align: center;
+            min-height: 300px;
+
+            .order-list {
+                height: 100%;
+
+                tr {
+                    padding-bottom: 10px;
+                }
+                td {
+                    height: 40px;
+                }
+                table {
+                    width: 100%;
+                }
+
+                th {
+                    text-align: left;
+                    font-weight: 700;
+                }
+                thead {
+                    th {
+                        background-image: linear-gradient($lightPurple 70%, $purple);
+                        color: $white;
+                    }
+                }
+
+                tbody {
+                    .colored {
+                        background-color: rgba($lightPurple, 0.1);
+                    }
+                }
+
+                .cancel-btn {
+                    margin: 0;
+
+                    button {
+                        width: 125px;
+                        background-image: linear-gradient($lightPurple 70%, $purple);
+                        border-radius: 5px;
+                        font-size: 17px;
+                        color: $white;
+                        border-style: none;
+                    }
+
+                    button:hover, button:focus {
+                        background-image: linear-gradient($purple, $lightPurple);
+                    }
+                }
+            }
+
+            div {
+                margin-top: 10px;
+            }
+        }
+    }
+}
