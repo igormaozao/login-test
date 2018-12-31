@@ -75,6 +75,7 @@ class LoginForm extends React.Component<{}, State> {
                     <TextInput
                         className="password"
                         placeholder="Password"
+                        inputType="password"
                         icon={<Lock className="icon" />}
                         onChangeCallback={this.passwordChange}
                     />

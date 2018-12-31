@@ -4,6 +4,7 @@ type Props = {
     className?: string,
     placeholder?: string,
     icon?: JSX.Element,
+    inputType?: string,
     onChangeCallback: Function
 };
 
@@ -17,11 +18,11 @@ class TextInput extends React.Component<Props, {}> {
     }
 
     render() {
-        const { className, placeholder, icon } = this.props;
+        const { className, placeholder, icon, inputType } = this.props;
         return (
             <div className={`${className || ''}`}>
                 <input
-                    type="text" 
+                    type={`${inputType || 'text'}`} 
                     placeholder={`${placeholder || ''}`}
                     onChange={this._onChange}
                 />
