@@ -3,7 +3,16 @@ Simple webpage with a basic Login System and a list of items with filter, build 
 
 ## Index
 
+- [Getting Started](#getting-started)
 - [Stack Base](#stack-base)
+
+## Getting Started
+- Clone this repository to your local machine.
+- Go to the root directory and install its dependencies.
+> npm install or yarn
+- Once the dependencies are installed, you can run the application:
+> npm start or yarn start
+- To login into the system you must use the default credentials **admin/admin**
 
 ## Stack Base
 Technology | Version | Reference
