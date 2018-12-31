@@ -51,6 +51,11 @@
             color: $lightGrey;
         }
 
+        .error {
+            color: $red;
+            font-weight: bold;
+        }
+
         .footer {
             display: flex;
 

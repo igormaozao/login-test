@@ -14,7 +14,8 @@ import Constants from 'src/constants/Constants';
 type State = {
     username: string,
     password: string,
-    isAuthenticated: boolean
+    isAuthenticated: boolean,
+    wrongAuth: boolean
 };
 
 class LoginForm extends React.Component<{}, State> {
@@ -25,7 +26,8 @@ class LoginForm extends React.Component<{}, State> {
         this.state = {
             username: '',
             password: '',
-            isAuthenticated: LocalStorage.hasActiveUser()
+            isAuthenticated: LocalStorage.hasActiveUser(),
+            wrongAuth: false
         }
     }
 
@@ -47,6 +49,8 @@ class LoginForm extends React.Component<{}, State> {
         if (Auth.IsValid(loginData)) {
             this.setState({ isAuthenticated: true });
             LocalStorage.setItem(Constants.ACTIVE_USER_KEY, JSON.stringify(loginData));
+        } else {
+            this.setState({ wrongAuth: true });
         }
     }
 
@@ -55,7 +59,7 @@ class LoginForm extends React.Component<{}, State> {
     }
 
     render() {
-        const { isAuthenticated } = this.state;
+        const { isAuthenticated, wrongAuth } = this.state;
         if (isAuthenticated) {
             return <Redirect to={'/home'} />
         }
@@ -79,6 +83,11 @@ class LoginForm extends React.Component<{}, State> {
                         icon={<Lock className="icon" />}
                         onChangeCallback={this.passwordChange}
                     />
+                    {
+                        wrongAuth && <div className="error">
+                            <span>Wrong Username or Password.</span>
+                        </div>
+                    }
                     <div className="footer">
                         <Button
                             className="login-btn"
