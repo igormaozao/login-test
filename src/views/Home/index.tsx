@@ -4,11 +4,11 @@ import List from '@material-ui/icons/List';
 import FilterList from '@material-ui/icons/FilterList';
 import NavBar from 'src/components/NavBar';
 import TextInput from 'src/components/HTMLComponents/TextInput';
-import CancelButton from './../../components/HTMLComponents/Buttons/CancelButton';
 
 import { BurguersOrdersMockList } from './../../_mocks_/BurguersOrdersMockList';
 
 import './index.scss';
+import OrdersTable from 'src/components/OrdersTable';
 
 type State = {
     orders: Order[],
@@ -94,37 +94,10 @@ class Home extends React.Component<{}, State> {
                         </div>
                         <div className="form-body">
                             <div className="order-list">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th> Order ID</th>
-                                            <th>Client</th>
-                                            <th>Burguers Quantity</th>
-                                            <th>Price</th>
-                                            <th />
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {
-                                            ordersList.map((order, index) => {
-                                                return <tr key={index} className={`${index % 2 === 0 ? '' : 'colored'}`}>
-                                                    <td>{order.id}</td>
-                                                    <td>{order.clientName}</td>
-                                                    <td>{order.burguers.length} {`burger${order.burguers.length > 1 ? 's' : ''}`}</td>
-                                                    <td>${order.totalOrderPrice()}</td>
-                                                    <td>
-                                                        <CancelButton
-                                                            className="cancel-btn"
-                                                            btnText="Cancel Order"
-                                                            callbackData={order.id}
-                                                            onClickCallback={this._onCancelOrder}
-                                                        />
-                                                    </td>
-                                                </tr>
-                                            })
-                                        }
-                                    </tbody>
-                                </table>
+                                <OrdersTable
+                                    ordersList={ordersList}
+                                    onCancelCallback={this._onCancelOrder}
+                                />
                             </div>
                         </div>
                     </div>
